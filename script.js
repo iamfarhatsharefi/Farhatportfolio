@@ -112,3 +112,121 @@ const projects = [
     sourceLink: 'https://github.com/iamfarhatsharefi/Pokeman-search-App',
   },
 ];
+
+const projectPopup = document.querySelector('.project-popup');
+const closeButton = document.querySelector('.project-popup .close-button');
+const screenshotSlider = document.querySelector('.project-popup .screenshot-slider');
+
+// Fetch primary color from CSS variables
+const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+
+function showProjectPopup(screenshots, longDescription, technologies, liveLink, sourceLink) {
+  projectPopup.style.display = 'flex';
+  screenshotSlider.innerHTML = '';
+  
+  // Adding screenshots to the slider
+  screenshots.forEach((screenshot) => {
+    const screenshotElement = document.createElement('img');
+    screenshotElement.src = screenshot;
+    screenshotSlider.appendChild(screenshotElement);
+  });
+
+  // Adding the long description
+  const longDescriptionElement = document.createElement('p');
+  longDescriptionElement.textContent = longDescription;
+  screenshotSlider.appendChild(longDescriptionElement);
+
+  // Adding technologies list
+  const technologiesElement = document.createElement('div');
+  technologiesElement.classList.add('technologies');
+  technologies.forEach((tech) => {
+    const techElement = document.createElement('span');
+    techElement.textContent = tech;
+    technologiesElement.appendChild(techElement);
+  });
+  screenshotSlider.appendChild(technologiesElement);
+
+  // Adding live link
+  const liveLink2 = document.createElement('a');
+  liveLink2.classList.add('live-link');
+  liveLink2.href = liveLink;
+  liveLink2.target = '_blank';
+  const liveLinkIcon = document.createElement('i');
+  liveLinkIcon.classList.add('fas', 'fa-external-link-alt');
+  liveLink2.appendChild(liveLinkIcon);
+  liveLink2.appendChild(document.createTextNode(''));
+  screenshotSlider.appendChild(liveLink2);
+
+  // Adding source link
+  const sourceLink2 = document.createElement('a');
+  sourceLink2.classList.add('source-link');
+  sourceLink2.href = sourceLink;
+  sourceLink2.target = '_blank';
+  const sourceLinkIcon = document.createElement('i');
+  sourceLinkIcon.classList.add('fab', 'fa-github');
+  sourceLink2.appendChild(sourceLinkIcon);
+  sourceLink2.appendChild(document.createTextNode(''));
+  screenshotSlider.appendChild(sourceLink2);
+}
+
+const projectsContainer = document.getElementById('projects');
+projects.forEach((project) => {
+  const projectElement = document.createElement('div');
+  projectElement.classList.add('project');
+
+  const titleElement = document.createElement('h2');
+  titleElement.classList.add('color');
+  titleElement.textContent = project.title;
+  titleElement.style.color = primaryColor; // Apply primary color to project title
+
+  const descriptionElement = document.createElement('div');
+  descriptionElement.classList.add('description');
+  descriptionElement.textContent = project.description;
+
+  const imageContainer = document.createElement('div');
+  imageContainer.classList.add('image-container');
+  const image = document.createElement('img');
+  image.src = project.images[0];
+
+  // View screenshots button
+  const viewScreenshotsButton = document.createElement('button');
+  viewScreenshotsButton.classList.add('view-screenshots');
+  viewScreenshotsButton.textContent = 'See More';
+  viewScreenshotsButton.style.backgroundColor = primaryColor; // Apply primary color to button
+  viewScreenshotsButton.addEventListener('click', () => {
+    showProjectPopup(
+      project.images,
+      project.longDescription,
+      project.technologies,
+      project.liveLink,
+      project.sourceLink,
+    );
+  });
+
+  imageContainer.appendChild(image);
+  imageContainer.appendChild(viewScreenshotsButton);
+  projectElement.appendChild(titleElement);
+  projectElement.appendChild(descriptionElement);
+  projectElement.appendChild(imageContainer);
+  projectsContainer.appendChild(projectElement);
+});
+
+// Close button functionality
+closeButton.addEventListener('click', () => {
+  projectPopup.style.display = 'none';
+});
+
+// Updating certificate section if necessary
+const certificateData = [
+  {
+    title: 'Responsive Web Design',
+    url: 'https://www.freecodecamp.org/certification/Farhatsharefi/responsive-web-design',
+    imageSrc: './images/capturetest.png',
+  },
+  {
+    title: 'JavaScript Algorithms',
+    url: 'https://www.freecodecamp.org/certification/Farhatsharefi/javascript-algorithms-and-data-structures-v8',
+    imageSrc: './images/capturetest2.png',
+  },
+];
+
