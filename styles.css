@@ -97,4 +97,137 @@
     background-color: #48bb78; /* Fresh green for the hamburger button */
     backdrop-filter: blur(10px);
   }
+
+  @keyframes humberger-shine {
+    0% {
+      text-shadow: none;
+      background-color: #48bb78; /* Fresh green for the initial state */
+    }
+  
+    50% {
+      box-shadow: 0 0 1rem #38b2ac, 0 0 2rem #63b3ed; /* Aqua and blue glow */
+      background-color: #38b2ac; /* Change to aqua tone at peak */
+    }
+  
+    100% {
+      text-shadow: none;
+      background-color: #48bb78; /* Return to initial green */
+    }
+  }
+  
+  .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem; /* Slightly increased size for better visibility */
+    font-weight: 600; /* Added weight for a bolder effect */
+    line-height: 2rem;
+    text-align: left;
+    width: 6rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 2.5rem;
+    color: #fbd38d; /* Warm yellow for the logo */
+    transform: translate(-600%, -200%);
+    animation: logo-glow 3s ease-in-out infinite, logo-scale 4s ease-in-out infinite;
+  }
+  
+  @keyframes logo-glow {
+    0% {
+      text-shadow: none;
+      color: #fbd38d; /* Warm yellow */
+    }
+  
+    50% {
+      text-shadow: 0 0 1rem #ed8936, 0 0 2rem #f6ad55; /* Orange and lighter yellow glow */
+      color: #f6ad55; /* Switch to a lighter shade at the peak */
+    }
+  
+    100% {
+      text-shadow: none;
+      color: #fbd38d; /* Return to the original warm yellow */
+    }
+  }
+  
+  @keyframes logo-scale {
+    0%,
+    100% {
+      transform: scale(1) translate(-600%, -200%);
+    }
+  
+    50% {
+      transform: scale(1.1) translate(-600%, -200%); /* Slightly larger scale for emphasis */
+    }
+  }
+  
+  .logo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 0.125rem;
+    background-color: #ed8936; /* Vibrant orange for hover effect */
+    transform: translateY(-50%);
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .logo:hover::before {
+    width: 100%;
+  }
+  
+  .logo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0;
+    height: 0.125rem;
+    background-color: #ed8936;
+    transform: translateY(-50%);
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .logo:hover::after {
+    width: 100%;
+  }
+  
+  @keyframes float-and-glow {
+    0% {
+      transform: translate(30%, 20%);
+      box-shadow: none;
+    }
+  
+    50% {
+      transform: translate(30%, 25%) scale(1.02); /* Gentle float effect */
+      box-shadow: 0 0 1rem #81e6d9, 0 0 2rem #4fd1c5; /* Soft teal and aqua glow */
+    }
+  
+    100% {
+      transform: translate(30%, 20%);
+      box-shadow: none;
+    }
+  }
+  
+  .home-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .home-image {
+    width: 20.57375rem;
+    position: absolute;
+    top: 7rem;
+    left: 3.125rem;
+    display: flex;
+    align-items: center;
+    transform: translate(30%, 20%);
+    justify-content: center;
+    animation: float-and-glow 6s ease-in-out infinite;
+  }
+  
+  .home-content {
+    margin-bottom: 800px;
+  }
+
   
