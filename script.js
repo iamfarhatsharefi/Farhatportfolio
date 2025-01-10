@@ -230,3 +230,74 @@ const certificateData = [
   },
 ];
 
+function generateCertificateItems() {
+    const certificateDescriptionElement = document.querySelector('.certificate-description');
+    const certificateGridElement = document.querySelector('.certificate-grid');
+  
+    // Update certificate description with primary color
+    certificateDescriptionElement.textContent = 'I\'m Farhat Sharefi, a graphic design and photography student at Kabul University with a passion for coding. My studies at Bakhtr Institute in Berlin and my NGO work, including volunteering with Save the Children, fuel my drive to create impactful web solutions and visually stunning projects.';
+  
+    // Fetch primary color from CSS variables
+    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+  
+    certificateData.forEach((certificate) => {
+      const certificateItem = document.createElement('a');
+      certificateItem.href = certificate.url;
+      certificateItem.target = '_blank';
+      certificateItem.classList.add('certificate-item');
+      certificateItem.style.borderColor = primaryColor; // Apply primary color as border color for certificate items
+  
+      const certificateImage = document.createElement('img');
+      certificateImage.src = certificate.imageSrc;
+      certificateImage.alt = certificate.title;
+  
+      const certificateTitle = document.createElement('h3');
+      certificateTitle.textContent = certificate.title;
+      certificateTitle.style.color = primaryColor; // Apply primary color to certificate title
+  
+      certificateItem.appendChild(certificateImage);
+      certificateItem.appendChild(certificateTitle);
+      certificateGridElement.appendChild(certificateItem);
+    });
+  }
+  
+  generateCertificateItems();
+  
+  const form = document.querySelector('.contact-form');
+  const formspreeUrl = 'https://formspree.io/f/mblroodb';
+  
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+  
+    const formData = new FormData(form);
+  
+    fetch(formspreeUrl, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert('Form submitted successfully!');
+          form.reset();
+        } else {
+          alert('Failed to submit the form. Please try again.');
+        }
+      })
+      .catch((error) => {
+        alert('There was an error submitting the form. Please check your internet connection and try again.');
+        console.error('Error:', error);
+      });
+  });
+  
+  // Apply primary color to form elements
+  const formElements = document.querySelectorAll('.contact-form input, .contact-form textarea, .contact-form button');
+  formElements.forEach((element) => {
+    element.style.borderColor = primaryColor; // Apply border color to form elements
+    element.addEventListener('focus', () => {
+      element.style.borderColor = primaryColor; // Highlight border color on focus
+    });
+    element.addEventListener('blur', () => {
+      element.style.borderColor = ''; // Reset border color after focus
+    });
+  });
+  
