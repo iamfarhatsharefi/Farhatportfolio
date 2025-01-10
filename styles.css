@@ -1315,4 +1315,475 @@
       color: #ff6f00; /* Hover effect with vibrant orange */
     }
 
-    
+/* Base colors */
+:root {
+    --primary-color: #FF6F61; /* Coral red */
+    --secondary-color: #1E2A47; /* Deep blue */
+    --accent-color: #FFBF00; /* Sunset yellow */
+    --background-color: #F1F1F1; /* Light grey */
+    --text-color: #333333; /* Dark grey */
+    --white: #FFFFFF;
+  }
+  
+  /* General styling */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Acme', sans-serif;
+  }
+  
+  /* Headers */
+  .certificates h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.53rem;
+    color: var(--secondary-color);
+  }
+  
+  #certificate-me {
+    background-color: var(--secondary-color);
+    color: var(--white);
+  }
+  
+  .certificate-description {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    color: var(--text-color);
+  }
+  
+  /* Certificate Grid */
+  .certificate-grid img {
+    border: 0.3125rem solid var(--accent-color);
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+  }
+  
+  /* Contact Section */
+  .contact-section h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 3.8rem;
+    color: var(--primary-color);
+  }
+  
+  #name, #phone, #email {
+    background-color: rgba(120, 120, 120, 0.32);
+    border: 0.1875rem solid var(--accent-color);
+    color: var(--white);
+  }
+  
+  #message {
+    background-color: rgba(120, 120, 120, 0.32);
+    border: 0.1875rem solid var(--accent-color);
+    color: var(--white);
+  }
+  
+  /* Submit Button */
+  .submit-button {
+    background-color: var(--primary-color);
+    border: 0.1875rem solid var(--primary-color);
+    color: var(--white);
+    font-size: 0.813rem;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+  
+  /* Error and Sent Messages */
+  .error {
+    color: rgb(212, 6, 6); /* Red for error */
+  }
+  
+  .sent {
+    color: green; /* Green for success */
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  
+  /* Responsive Styling */
+  @media (min-width: 1441px) and (max-width: 1000px) {
+    .error {
+      color: rgb(212, 6, 6);
+    }
+  }
+  
+  @media (min-width: 300px) and (max-width: 400px) {
+    .nav-links.show {
+      width: 12rem;
+      background-color: var(--secondary-color);
+      color: var(--white);
+      font-size: 24px;
+    }
+  
+    .hamburger {
+      background-color: var(--primary-color);
+      border-radius: 200px;
+    }
+  }
+
+ /* Header and Logo */
+.logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    margin-left: 2rem;
+  }
+  
+  #home-title {
+    width: 20rem;
+    transform: translate(30%, 1800%);
+    font-size: 3rem;
+    color: #f9a826;
+  }
+  
+  #home-name {
+    width: 20rem;
+    transform: translate(31%, 1930%);
+    font-size: 2.5rem;
+    color: #f9a826;
+  }
+  
+  #home-role {
+    width: 20rem;
+    transform: translate(31%, 2320%);
+    font-size: 2rem;
+    color: #f9a826;
+  }
+  
+  #home-description {
+    width: 20rem;
+    transform: translate(31%, 480%);
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .social-icons {
+    width: 20rem;
+    transform: translate(10%, 2320%);
+  }
+  
+  /* About Section */
+  #about-image {
+    width: 15rem;
+    transform: translate(31%, -30%);
+  }
+  
+  #about-title {
+    width: 13rem;
+    transform: translate(31%, -24%);
+    font-size: 2.2rem;
+    color: #f9a826;
+  }
+  
+  #about-role {
+    width: 16rem;
+    transform: translate(30%, -20%);
+    font-size: 1.8rem;
+    color: #f9a826;
+  }
+  
+  #about-description {
+    width: 20rem;
+    transform: translate(25%, 2%);
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .skills {
+    width: 20rem;
+    transform: translate(24%, 70%);
+  }
+  
+  #skill1,
+  #skill2,
+  #skill3 {
+    width: 20rem;
+    transform: translate(50%, 100%);
+  }
+  
+  /* Project Images and View Button */
+  .image-container img {
+    width: 8rem;
+  }
+  
+  .view-screenshots {
+    width: 4.4rem;
+    background-color: #f9a826;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Certificate Section */
+  .certificate-description {
+    width: 22rem;
+    font-size: 1.5rem;
+    color: #f9a826;
+  }
+  
+  /* Contact Section */
+  .contact-section h1 {
+    width: 80%;
+    margin-top: 2rem;
+    transform: translate(31%, -100%);
+    font-size: 2.5rem;
+    color: #f9a826;
+  }
+  
+  #name,
+  #phone,
+  #email {
+    width: 20rem;
+    transform: translate(51%, -300%);
+    border-radius: 10rem;
+    background-color: #78787852;
+    border: 0.1875rem solid #f9a826;
+    color: #fff;
+    padding-left: 2rem;
+  }
+  
+  #message {
+    width: 20rem;
+    transform: translate(51%, -80%);
+    border-radius: 2.7rem;
+    border: 0.1875rem solid #f9a826;
+    background-color: #78787852;
+    padding-left: 2rem;
+    padding-top: 2rem;
+  }
+  
+  .email-message {
+    width: 20rem;
+    transform: translate(51%, 500%);
+    font-size: 1rem;
+    color: green;
+  }
+  
+  .submit-button {
+    width: 10rem;
+    transform: translate(151%, -170%);
+    background-color: #f9a826;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Error and Sent Messages */
+  .error {
+    color: red;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'actor', sans-serif;
+  }
+  
+  .sent {
+    color: green;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'actor', Arial, sans-serif;
+  }
+  
+  /* Footer */
+  .footer {
+    width: 20rem;
+    display: flex;
+    text-align: center;
+    transform: translate(40%);
+    color: #fff;
+    font-size: 1.4rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Responsive Media Queries */
+  @media (min-width: 401px) and (max-width: 687px) {
+    #home-title {
+      width: 30rem;
+      transform: translate(20%, 1800%);
+    }
+  
+    #home-name {
+      width: 20rem;
+      transform: translate(31%, 1930%);
+    }
+  
+    #home-role {
+      width: 20rem;
+      transform: translate(31%, 2320%);
+    }
+  
+    #home-description {
+      width: 20rem;
+      transform: translate(31%, 480%);
+    }
+  
+    .social-icons {
+      width: 20rem;
+      transform: translate(10%, 2320%);
+    }
+  
+    #about-image {
+      width: 20rem;
+      transform: translate(31%, -30%);
+    }
+  
+    #about-title {
+      width: 40rem;
+      transform: translate(-10%, -20%);
+    }
+  
+    #about-role {
+      width: 20rem;
+      transform: translate(51%, -20%);
+    }
+  
+    #about-description {
+      width: 30rem;
+      transform: translate(35%, 2%);
+    }
+  
+    .skills {
+      width: 20rem;
+      transform: translate(52%, -400%);
+    }
+  
+    #skill1,
+    #skill2,
+    #skill3 {
+      width: 20rem;
+      transform: translate(77%, -120%);
+    }
+  
+    .contact-section h1 {
+      width: 80%;
+      transform: translate(31%, -100%);
+    }
+  
+    #name,
+    #phone,
+    #email {
+      width: 20rem;
+      transform: translate(51%, -300%);
+    }
+  
+    #message {
+      width: 20rem;
+      transform: translate(51%, -80%);
+    }
+  
+    .email-message {
+      width: 20rem;
+      transform: translate(51%, 500%);
+    }
+  
+    .submit-button {
+      width: 10rem;
+      transform: translate(151%, -170%);
+    }
+  }
+  
+  @media (min-width: 779px) and (max-width: 900px) {
+    #home-title {
+      width: 30rem;
+      transform: translate(3%, 900%);
+    }
+  
+    #home-name {
+      width: 20rem;
+      transform: translate(4%, 830%);
+    }
+  
+    #home-role {
+      width: 20rem;
+      transform: translate(4%, 1300%);
+    }
+  
+    #home-description {
+      width: 40rem;
+      transform: translate(2%, 290%);
+    }
+  
+    .social-icons {
+      width: 20rem;
+      transform: translate(2%, 2020%);
+    }
+  
+    #about-image {
+      width: 30rem;
+      transform: translate(120%, -10%);
+    }
+  
+    #about-title {
+      width: 20rem;
+      transform: translate(-31%, -600%);
+    }
+  
+    #about-role {
+      width: 20rem;
+      transform: translate(-12%, -820%);
+    }
+  
+    #about-description {
+      width: 35rem;
+      transform: translate(-8%, -89%);
+    }
+  
+    .skills {
+      width: 20rem;
+      transform: translate(-12%, -1500%);
+    }
+  
+    #skill1,
+    #skill2,
+    #skill3 {
+      width: 20rem;
+      transform: translate(11%, -500%);
+    }
+  
+    .certificate-grid img {
+      transform: translate(170%, -250%);
+    }
+  
+    .contact-section h1 {
+      width: 80%;
+      transform: translate(34%, -100%);
+    }
+  
+    #name,
+    #phone,
+    #email {
+      width: 20rem;
+      transform: translate(40%, -300%);
+    }
+  
+    #message {
+      width: 20rem;
+      transform: translate(40%, -70%);
+    }
+  
+    .email-message {
+      width: 20rem;
+      transform: translate(40%, 500%);
+    }
+  
+    .submit-button {
+      width: 10rem;
+      transform: translate(130%, -170%);
+    }
+  
+    .contact-image {
+      transform: translate(120%, -180%);
+    }
+  }
+
+  
+   
