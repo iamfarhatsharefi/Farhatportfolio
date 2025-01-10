@@ -9,7 +9,6 @@ closeBtn.addEventListener('click', () => {
   navLinks.classList.remove('show');
   closeBtn.style.display = 'none';
 });
-
 const userData = {
   homeImage: 'images/employe1.png',
   homeTitle: 'Hello there, <span class="color">I\'m</span>',
@@ -23,7 +22,6 @@ const userData = {
   socialIcons: ['images/linkedin.png', 'images/GitHub.png', 'images/fb.png', 'images/WhatsApp.png'],
   skillIcons: ['images/html-5 2.png', 'images/css-3 2.png', 'images/java-script 2.png'],
 };
-
 const homeSection = document.getElementById('home');
 const aboutSection = document.getElementById('about');
 homeSection.querySelector('#home-image').src = userData.homeImage;
@@ -37,33 +35,26 @@ aboutSection.querySelector('#about-title').innerHTML = userData.aboutTitle;
 aboutSection.querySelector('#about-role').innerHTML = userData.aboutRole;
 aboutSection.querySelector('#about-description').textContent = userData.aboutDescription;
 
-// Fetch primary color from CSS variables
-const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
-
-// Update all elements with 'color' class to use primary color
-const coloredElements = document.querySelectorAll('.color');
-coloredElements.forEach((element) => {
-  element.style.color = primaryColor;
-});
-
-// Set skill icon colors
-const skillIcons = aboutSection.querySelectorAll('.about-skills li img');
-skillIcons.forEach((icon, index) => {
-  icon.src = `${userData.skillIcons[index]}`;
-});
-
-// Apply color to skill names
-const skillNames = aboutSection.querySelectorAll('.about-skills li span.yellow-text');
-skillNames.forEach((skill) => {
-  skill.style.color = primaryColor;
-});
-
-// Add social icons dynamically
 const socialIcons = homeSection.querySelectorAll('.social-icons img');
 socialIcons.forEach((icon, index) => {
   icon.src = `${userData.socialIcons[index]}`;
 });
 
+const skillIcons = aboutSection.querySelectorAll('.about-skills li img');
+skillIcons.forEach((icon, index) => {
+  icon.src = `${userData.skillIcons[index]}`;
+});
+
+const skillNames = aboutSection.querySelectorAll('.about-skills li span.yellow-text');
+skillNames.forEach((skill, index) => {
+  skill.textContent = userData.skillNames[index];
+  skill.style.color = '#ffcc00';
+});
+
+const coloredElements = document.querySelectorAll('.color');
+coloredElements.forEach((element) => {
+  element.style.color = '#ffcc00';
+});
 const projects = [
   {
     title: '1: Personal Portfolio Webpage',
@@ -117,26 +108,19 @@ const projectPopup = document.querySelector('.project-popup');
 const closeButton = document.querySelector('.project-popup .close-button');
 const screenshotSlider = document.querySelector('.project-popup .screenshot-slider');
 
-// Fetch primary color from CSS variables
-const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
-
 function showProjectPopup(screenshots, longDescription, technologies, liveLink, sourceLink) {
   projectPopup.style.display = 'flex';
   screenshotSlider.innerHTML = '';
-  
-  // Adding screenshots to the slider
   screenshots.forEach((screenshot) => {
     const screenshotElement = document.createElement('img');
     screenshotElement.src = screenshot;
     screenshotSlider.appendChild(screenshotElement);
   });
 
-  // Adding the long description
   const longDescriptionElement = document.createElement('p');
   longDescriptionElement.textContent = longDescription;
   screenshotSlider.appendChild(longDescriptionElement);
 
-  // Adding technologies list
   const technologiesElement = document.createElement('div');
   technologiesElement.classList.add('technologies');
   technologies.forEach((tech) => {
@@ -146,7 +130,6 @@ function showProjectPopup(screenshots, longDescription, technologies, liveLink, 
   });
   screenshotSlider.appendChild(technologiesElement);
 
-  // Adding live link
   const liveLink2 = document.createElement('a');
   liveLink2.classList.add('live-link');
   liveLink2.href = liveLink;
@@ -157,7 +140,6 @@ function showProjectPopup(screenshots, longDescription, technologies, liveLink, 
   liveLink2.appendChild(document.createTextNode(''));
   screenshotSlider.appendChild(liveLink2);
 
-  // Adding source link
   const sourceLink2 = document.createElement('a');
   sourceLink2.classList.add('source-link');
   sourceLink2.href = sourceLink;
@@ -171,13 +153,13 @@ function showProjectPopup(screenshots, longDescription, technologies, liveLink, 
 
 const projectsContainer = document.getElementById('projects');
 projects.forEach((project) => {
+  // eslint-disable-next-line prefer-destructuring
   const projectElement = document.createElement('div');
   projectElement.classList.add('project');
 
   const titleElement = document.createElement('h2');
   titleElement.classList.add('color');
   titleElement.textContent = project.title;
-  titleElement.style.color = primaryColor; // Apply primary color to project title
 
   const descriptionElement = document.createElement('div');
   descriptionElement.classList.add('description');
@@ -186,13 +168,12 @@ projects.forEach((project) => {
   const imageContainer = document.createElement('div');
   imageContainer.classList.add('image-container');
   const image = document.createElement('img');
+  // eslint-disable-next-line prefer-destructuring
   image.src = project.images[0];
 
-  // View screenshots button
   const viewScreenshotsButton = document.createElement('button');
   viewScreenshotsButton.classList.add('view-screenshots');
   viewScreenshotsButton.textContent = 'See More';
-  viewScreenshotsButton.style.backgroundColor = primaryColor; // Apply primary color to button
   viewScreenshotsButton.addEventListener('click', () => {
     showProjectPopup(
       project.images,
@@ -211,12 +192,10 @@ projects.forEach((project) => {
   projectsContainer.appendChild(projectElement);
 });
 
-// Close button functionality
 closeButton.addEventListener('click', () => {
   projectPopup.style.display = 'none';
 });
 
-// Updating certificate section if necessary
 const certificateData = [
   {
     title: 'Responsive Web Design',
@@ -228,76 +207,62 @@ const certificateData = [
     url: 'https://www.freecodecamp.org/certification/Farhatsharefi/javascript-algorithms-and-data-structures-v8',
     imageSrc: './images/capturetest2.png',
   },
+  {
+    title: 'Html and css crash',
+    imageSrc: './images/cert.png',
+  },
 ];
 
 function generateCertificateItems() {
-    const certificateDescriptionElement = document.querySelector('.certificate-description');
-    const certificateGridElement = document.querySelector('.certificate-grid');
-  
-    // Update certificate description with primary color
-    certificateDescriptionElement.textContent = 'I\'m Farhat Sharefi, a graphic design and photography student at Kabul University with a passion for coding. My studies at Bakhtr Institute in Berlin and my NGO work, including volunteering with Save the Children, fuel my drive to create impactful web solutions and visually stunning projects.';
-  
-    // Fetch primary color from CSS variables
-    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
-  
-    certificateData.forEach((certificate) => {
-      const certificateItem = document.createElement('a');
-      certificateItem.href = certificate.url;
-      certificateItem.target = '_blank';
-      certificateItem.classList.add('certificate-item');
-      certificateItem.style.borderColor = primaryColor; // Apply primary color as border color for certificate items
-  
-      const certificateImage = document.createElement('img');
-      certificateImage.src = certificate.imageSrc;
-      certificateImage.alt = certificate.title;
-  
-      const certificateTitle = document.createElement('h3');
-      certificateTitle.textContent = certificate.title;
-      certificateTitle.style.color = primaryColor; // Apply primary color to certificate title
-  
-      certificateItem.appendChild(certificateImage);
-      certificateItem.appendChild(certificateTitle);
-      certificateGridElement.appendChild(certificateItem);
-    });
-  }
-  
-  generateCertificateItems();
-  
-  const form = document.querySelector('.contact-form');
-  const formspreeUrl = 'https://formspree.io/f/mblroodb';
-  
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-  
-    const formData = new FormData(form);
-  
-    fetch(formspreeUrl, {
-      method: 'POST',
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert('Form submitted successfully!');
-          form.reset();
-        } else {
-          alert('Failed to submit the form. Please try again.');
-        }
+  const certificateDescriptionElement = document.querySelector('.certificate-description');
+  const certificateGridElement = document.querySelector('.certificate-grid');
+
+  certificateDescriptionElement.textContent = 'I\'m Farhat Sharefi, a graphic design and photography student at Kabul University with a passion for coding. My studies at Bakhtr Institute in Berlin and my NGO work, including volunteering with Save the Children, fuel my drive to create impactful web solutions and visually stunning projects.';
+
+  certificateData.forEach((certificate) => {
+    const certificateItem = document.createElement('a');
+    certificateItem.href = certificate.url;
+    certificateItem.target = '_blank';
+    certificateItem.classList.add('certificate-item');
+
+    const certificateImage = document.createElement('img');
+    certificateImage.src = certificate.imageSrc;
+    certificateImage.alt = certificate.title;
+
+    const certificateTitle = document.createElement('h3');
+    certificateTitle.textContent = certificate.title;
+
+    certificateItem.appendChild(certificateImage);
+    certificateItem.appendChild(certificateTitle);
+    certificateGridElement.appendChild(certificateItem);
+  });
+}
+
+generateCertificateItems();
+
+
+const form = document.querySelector('.contact-form');
+    const formspreeUrl = 'https://formspree.io/f/mblroodb';
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(formspreeUrl, {
+        method: 'POST',
+        body: formData,
       })
-      .catch((error) => {
-        alert('There was an error submitting the form. Please check your internet connection and try again.');
-        console.error('Error:', error);
-      });
-  });
-  
-  // Apply primary color to form elements
-  const formElements = document.querySelectorAll('.contact-form input, .contact-form textarea, .contact-form button');
-  formElements.forEach((element) => {
-    element.style.borderColor = primaryColor; // Apply border color to form elements
-    element.addEventListener('focus', () => {
-      element.style.borderColor = primaryColor; // Highlight border color on focus
+        .then((response) => {
+          if (response.ok) {
+            alert('Form submitted successfully!');
+            form.reset();
+          } else {
+            alert('Failed to submit the form. Please try again.');
+          }
+        })
+        .catch((error) => {
+          alert('There was an error submitting the form. Please check your internet connection and try again.');
+          console.error('Error:', error);
+        });
     });
-    element.addEventListener('blur', () => {
-      element.style.borderColor = ''; // Reset border color after focus
-    });
-  });
-  
