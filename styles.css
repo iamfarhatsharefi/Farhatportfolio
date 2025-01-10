@@ -849,4 +849,279 @@
     margin: 0;
   }
 
+  .form-group {
+    padding: 0;
+    margin: 0;
+  }
   
+  @media (max-width: 1440px) and (min-width: 780px) {
+    .hamburger {
+      display: none;
+    }
+  
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      position: static;
+      background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+      backdrop-filter: blur(5px); /* Smooth backdrop filter effect */
+      border-top: 2px solid #ff6f00; /* Vibrant orange */
+      transform: none;
+      padding: 0;
+      width: 38.25rem;
+      top: 6.5rem;
+      left: 33.09rem;
+      gap: 0;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 2.53rem;
+      text-align: left;
+    }
+  
+    .nav-links li {
+      margin: 0 20px;
+      color: #f8d000; /* Bright yellow for text */
+    }
+  
+    .nav-links .close-btn {
+      display: none;
+    }
+  
+    .nav-links.show {
+      display: none;
+    }
+  
+    .logo {
+      width: 5.56rem;
+      top: 8.5rem;
+      left: 7.25rem;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.9rem;
+      text-align: left;
+      color: #f8d000; /* Bright yellow logo */
+    }
+  
+    #home-image {
+      width: 27.75rem;
+      height: 28rem;
+      top: 13.94rem;
+      left: 24.88rem;
+      gap: 0;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      flex-wrap: wrap;
+      transform: translate(160%);
+      filter: brightness(0.85);
+    }
+  
+    #home-title,
+    #home-role,
+    #home-name {
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
+  
+    #home-title {
+      width: 30.5rem;
+      top: 1.81rem;
+      left: 7.25rem;
+      gap: 1rem;
+      font-family: 'Acme', sans-serif;
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 5.06rem;
+      text-align: left;
+      transform: translate(-58%, 900%);
+      color: #ff6f00; /* Vibrant orange */
+    }
+  
+    #home-name {
+      width: 19.31rem;
+      height: 2.38rem;
+      top: 22.24rem;
+      left: 7.29rem;
+      gap: 0;
+      font-family: 'Actor', sans-serif;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 2.41rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      transform: translate(-90%, 900%);
+      color: #f8d000; /* Yellow for name */
+    }
+  
+    #home-role {
+      width: 30.75rem;
+      top: 2.28rem;
+      left: 7.25rem;
+      gap: 1rem;
+      transform: translate(-56%, 1400%);
+      color: #ff6f00; /* Vibrant orange for role */
+    }
+  
+    #home-description {
+      width: 43.5rem;
+      top: 27.94rem;
+      left: 7.25rem;
+      gap: 0;
+      font-family: 'Actor', sans-serif;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 2.41rem;
+      text-align: left;
+      padding: 0;
+      transform: translate(-40%, 310%);
+      color: #f8d000; /* Bright yellow for description */
+    }
+  
+    .social-icons {
+      width: 3.5rem;
+      top: 14.3125rem;
+      left: 10.03125rem;
+      gap: 1rem;
+      justify-content: space-between;
+      padding-right: 40rem;
+      transform: translate(-40%, 1900%);
+    }
+  
+    .social-icons li a:hover {
+      transform: scale(1.2);
+      background-color: #ff6f00; /* Vibrant orange on hover */
+      box-shadow: 10px 0 10px rgba(231, 198, 8, 0.295);
+    }
+  
+    .social-icons::before {
+      content: "Join the Journey";
+      position: absolute;
+      top: -2rem;
+      left: 20%;
+      transform: translateX(-50%);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-family: 'Actor', sans-serif;
+      color: #f8d000; /* Yellow text for message */
+    }
+  
+    .social-icons:hover::before {
+      opacity: 1;
+    }
+  
+    #about-image {
+      width: 28.1875rem;
+      border: none;
+      border-radius: 0;
+      top: 19.75rem;
+      left: 54.5rem;
+      gap: 0;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      flex-wrap: wrap;
+      transform: translate(60%);
+      filter: brightness(0.85);
+    }
+  
+    #about-title {
+      width: 11.6875rem;
+      top: 13.181875rem;
+      left: 7.25125rem;
+      gap: 0.4rem;
+      font-family: 'Acme', sans-serif;
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 3.798125rem;
+      text-align: left;
+      display: flex;
+      justify-content: center;
+      transform: translate(-180%, -700%);
+      color: #ff6f00; /* Orange for About title */
+    }
+  
+    #about-role {
+      width: 26.3125rem;
+      top: 18.375rem;
+      left: 7.25rem;
+      gap: 0;
+      font-family: 'Acme', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 3.164rem;
+      text-align: left;
+      display: flex;
+      transform: translate(-82%, -1000%);
+      color: #f8d000; /* Yellow for role */
+    }
+  
+    .skills {
+      width: 9.875rem;
+      top: 41.6875rem;
+      left: 7.25rem;
+      gap: 0.4rem;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      text-align: left;
+      transform: translate(-220%, -1500%);
+      color: #f8d000; /* Yellow for skills section */
+    }
+  
+    #skill1,
+    #skill2,
+    #skill3 {
+      width: 7.0625rem;
+      top: 48.1875rem;
+      left: 7.25rem;
+      gap: 0;
+      font-family: 'Acme', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.89875rem;
+      text-align: left;
+      transform: translate(-240%, -550%);
+      color: #f8d000; /* Yellow skills */
+    }
+  
+    #about-description {
+      width: 36.4375rem;
+      top: 22.830625rem;
+      left: 7.25rem;
+      gap: 0;
+      font-family: 'Acme', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.89875rem;
+      text-align: left;
+      display: flex;
+      justify-items: center;
+      transform: translate(-60%, -110%);
+      color: #f8d000; /* Yellow for About Description */
+    }
+  
+    .project-container h1 {
+      align-items: center;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      width: 14.125rem;
+      height: 3.8125rem;
+      top: 9.52375rem;
+      left: 33.963125rem;
+      gap: 0.3rem;
+      font-family: 'Acme', sans-serif;
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 3.798125rem;
+      transform: translate(250%);
+      color: #ff6f00; /* Orange title for projects */
+    }
+
+    
